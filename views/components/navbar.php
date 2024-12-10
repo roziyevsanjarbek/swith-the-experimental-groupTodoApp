@@ -11,7 +11,7 @@ require 'views/components/header.php';
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="/todos">Todo List</a></li>
                 <li class="nav-item"><a class="nav-link" href="/login">Log in</a></li>
-                <li class="nav-item"><a class="btn btn-primary" href="/register">Start for free</a></li>
+                <li class="nav-item"><a class="btn btn-primary" href="/register">Register</a></li>
             </ul>
         </div>
     </div>
