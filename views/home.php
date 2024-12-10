@@ -9,7 +9,7 @@ require 'views/components/navbar.php';
         <p>
             Simplify life for both you and your team with the world's #1 task manager and to-do list app.
         </p>
-        <a href="/register" class="btn btn-primary btn-primary-home btn-lg">Start for free</a>
+        <a href="/register" class="btn btn-primary btn-primary-home btn-lg">Register</a>
     </div>
     <div class="hero-image">
         <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="App Screenshot">
