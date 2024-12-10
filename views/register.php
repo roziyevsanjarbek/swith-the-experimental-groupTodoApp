@@ -19,7 +19,7 @@ require 'views/components/navbar.php';
             </div>
             <div class="mb-3">
                 <label for="confirm Password" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" name="password" required>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" name="repeat_password" required>
             </div>
             <div class="d-grid">
                 <p class="text-danger text-center" style="display: block;"><?= $_SESSION['error_message'] ?? '' ?></p>
