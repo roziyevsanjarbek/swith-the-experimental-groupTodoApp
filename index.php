@@ -14,6 +14,8 @@ require 'helpers.php';
 $router = new Router();
 $todo= new Todo();
 
+$router->get('/user',fn()=>require 'controllers/storeUserController.php');
+
 $router->get('/register',fn()=>view('register'));
 $router->get('/login',fn()=>view('login'));
 
