@@ -1,9 +1,7 @@
 <?php
 require 'views/components/header.php';
 ?>
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; top: 0; width: 100%; z-index:1000;">
     <div class="container">
         <a class="navbar-brand" href="/">Todo App</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

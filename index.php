@@ -15,7 +15,7 @@ $router = new Router();
 $todo= new Todo();
 
 $router->get('/register',fn()=>view('register'));
-$router->post('/register',fn()=>require 'controllers/storeUserController.php');
+$router->post('/register',fn()=> require 'controllers/storeUserController.php');
 
 $router->get('/login',fn()=>view('login'));
 $router->post('/login',fn()=>require 'controllers/loginUsersController.php');
