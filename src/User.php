@@ -15,23 +15,23 @@ class User
     }
 
     public function register(
-        string $fullName,
+        string $full_name,
         string $email,
         string $password
     ): bool|int
     {
-        $select = $this->pdo->prepare("SELECT * FROM user WHERE email = :email");
+        $select = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
         $select->bindParam(":email", $email);
         $select->execute();
         if ($select->rowCount() > 0) {
             return false;
         }
 
-        $query = "INSERT INTO user(full_name, email, password)
+        $query = "INSERT INTO users(full_name, email, password)
               VALUES (:full_name, :email, :password)";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute([
-            ':full_name' => $fullName,
+            ':full_name' => $full_name,
             ':email' => $email,
             ':password' => $password,
         ]);
@@ -41,7 +41,7 @@ class User
 
     public function login(string $email, string $password): bool|array
     {
-        $query = "SELECT * FROM user WHERE email = :email AND password = :password";
+        $query = "SELECT * FROM users WHERE email = :email AND password = :password";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute([
             ':email' => $email,
