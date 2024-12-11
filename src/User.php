@@ -43,7 +43,7 @@ class User
 
     public function login(string $email, string $password): bool|array
     {
-        $query = "SELECT * FROM users WHERE email = :email AND password = :password";
+        $query = "SELECT * FROM user WHERE email = :email AND password = :password";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute([
             ':email' => $email,

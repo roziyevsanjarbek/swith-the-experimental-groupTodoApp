@@ -9,6 +9,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         if ($saveemail === $_POST['email'] && $savepasssword === $_POST['password']) {
             unset($_SESSION['error_message']);
             $_SESSION['user_id'] = $user['id'];
+            unset($user['password']);
+            $_SESSION['user'] = $user;
             redirect('/todos');
             exit();
         } else {
@@ -23,6 +25,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     }
 } else {
     $_SESSION['error_message'] = 'Please fill in all fields';
+
     redirect('/login');
     exit();
 }
