@@ -41,7 +41,7 @@ class User
 
     }
 
-    public function login(string $email, string $password): bool|array
+    public function login(string $email, string $password): mixed
     {
         $query = "SELECT * FROM user WHERE email = :email AND password = :password";
         $stmt = $this->pdo->prepare($query);
