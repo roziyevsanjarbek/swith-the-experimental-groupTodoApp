@@ -18,16 +18,16 @@ class User
         string $full_name,
         string $email,
         string $password
-    ): bool
+    ): mixed
     {
-        $select = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
+        $select = $this->pdo->prepare("SELECT * FROM user WHERE email = :email");
         $select->bindParam(":email", $email);
         $select->execute();
         if ($select->rowCount() > 0) {
             return false;
         }
 
-        $query = "INSERT INTO users(full_name, email, password)
+        $query = "INSERT INTO user(full_name, email, password)
               VALUES (:full_name, :email, :password)";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute([
@@ -64,5 +64,7 @@ class User
         ]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+
 }
 ?>

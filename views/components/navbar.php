@@ -10,7 +10,7 @@ require 'views/components/header.php';
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <?php
-                if (isset($_SESSION['user'])) :
+                if (isset($_SESSION['user'])):
                     ?>
                     <li class="dropdown">
                         <a href="/todos" data-bs-toggle="dropdown" aria-expanded="false">
@@ -24,6 +24,7 @@ require 'views/components/header.php';
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/todos">To-do List</a></li>
                             <li><a class="dropdown-item" href="/todos"><?= $_SESSION['user']['full_name'] ?? '' ?></a></li>
+                            <li><a class="dropdown-item" href="/todos">log out</a></li>
                         </ul>
                     </li>
                 <?php
