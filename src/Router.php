@@ -37,8 +37,7 @@ class Router
             }
         }
     }
-
-
+    
     public function put($route, $callback)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

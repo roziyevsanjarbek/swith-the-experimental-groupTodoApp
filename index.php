@@ -14,17 +14,18 @@ require 'helpers.php';
 $router = new Router();
 $todo= new Todo();
 
+$router->get('/register',fn()=>view('register'));
 $router->post('/register',fn()=>require 'controllers/storeUserController.php');
 
-$router->get('/register',fn()=>view('register'));
 $router->get('/login',fn()=>view('login'));
+$router->post('/login',fn()=>require 'controllers/loginUsersController.php');
 
 
 $router->get('/',fn()=>require 'controllers/homeController.php');
 
 $router->put("/todos/{id}/update",fn($todoId)=>require 'controllers/updateTodosController.php');
 
-$router->put('/todos/{id}/update',fn($todoId)=>require 'controllers/editTodoController.php');
+$router->get('/todos/{id}/update',fn($todoId)=>require 'controllers/editTodoController.php');
 
 
 $router->get('/todos',fn()=>require 'controllers/getTodosController.php');
