@@ -37,7 +37,7 @@ $router->get('/todos/{id}/update',fn($todoId)=>require 'controllers/editTodoCont
 $router->get('/todos',fn()=>require 'controllers/getTodosController.php');
 
 
-$router->post('/todos',fn()=>require 'controllers/postTodosController.php');
+$router->post('/todos',fn()=> require 'controllers/storeTodosController.php');
 
 
 $router->get('/todos/{id}/delete', fn($todoId)=>require 'controllers/deleteTodosController.php');
