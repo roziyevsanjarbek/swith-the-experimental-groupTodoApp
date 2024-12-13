@@ -1,20 +1,23 @@
 <?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+//require 'routes/web.php';
 
 require 'bootstrap.php';
+require 'helpers.php';
+
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 use App\Todo;
+
 use App\Router;
 
 require 'helpers.php';
 
 $router = new Router();
+
 $todo= new Todo();
 
 $router->get('/register',fn()=>view('register'));
+
 $router->post('/register',fn()=> require 'controllers/storeUserController.php');
 
 $router->get('/login',fn()=>view('login'));
@@ -47,7 +50,7 @@ $router->post('/todos/{id}/delete', fn($todoId)=>require 'controllers/deleteTodo
 
 
 
-?>
+
 
 
 
