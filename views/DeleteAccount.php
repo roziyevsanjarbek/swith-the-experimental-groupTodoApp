@@ -6,7 +6,7 @@ require 'views/components/navbar.php';
     <h2 class="text-center mb-4">Delete Account</h2>
     <form action="/deleteAccount" method="post">
         <div class="mb-3">
-            <label for="registerPassword" class="form-label">Password</label>
+            <label for="registerPassword" class="form-label">Name</label>
             <input type="text" value="<?= $_SESSION['user']['full_name'] ?>" class="form-control" id="registerPassword" placeholder="Enter your password" name="password" required>
         </div>
         <div class="mb-3">
