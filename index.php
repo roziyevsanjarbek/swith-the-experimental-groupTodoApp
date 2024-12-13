@@ -20,7 +20,6 @@ $router->post('/register',fn()=> require 'controllers/storeUserController.php');
 $router->get('/login',fn()=>view('login'));
 $router->post('/login',fn()=>require 'controllers/loginUsersController.php');
 
-
 $router->get('/DeleteAccount',fn()=>view('DeleteAccount'));
 
 $router->post('/deleteAccount',fn()=> require 'controllers/deleteUserController.php');
