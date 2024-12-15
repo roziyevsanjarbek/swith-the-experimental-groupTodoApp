@@ -1,16 +1,19 @@
 <?php
-use App\Todo;
+
 use App\Router;
+use App\Todo;
 
 $router = new Router();
 $todo = new Todo();
 
-$router->get('/api/todos',function () use ($todo){
+$router->get('/api/todos',function () use ($todo) {
+    header('Content-Type: application/json');
     apiResponse($todo->getAllTodos(2));
+});
+
+$router->get('/api/todos/{id}',function ($todoId) use ($todo) {
+    header('Content-Type: application/json');
+    apiResponse($todo->getAllTodos($todoId));
 
 });
 
-$router->get('/api/todos/{id}',function () use ($todoId) use ($todo){
-apiResponse($todo->getTodo($todoId));
-
-});

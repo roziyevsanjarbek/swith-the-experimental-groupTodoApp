@@ -78,5 +78,9 @@ class Router
         }
 
     }
+    public function isApiCall(): bool
+    {
+        return mb_stripos($this->currentRounte, '/api') === 0;
+    }
 
 }

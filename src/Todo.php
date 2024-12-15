@@ -53,7 +53,7 @@ public function getTodo (int $id){
     $stmt->execute([
         ":id" => $id
     ]);
-    return $stmt->fetch();
+    return $stmt->fetch(\PDO::FETCH_ASSOC);
 }
 
     public function DeleteUserId(int $userId)
