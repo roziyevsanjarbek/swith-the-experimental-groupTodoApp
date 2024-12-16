@@ -40,7 +40,7 @@ class Router
 
     }
 
-    public function post($route,$callback)
+    public function post($route,$callback): void
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $resourceValue = $this->getResourser($route);

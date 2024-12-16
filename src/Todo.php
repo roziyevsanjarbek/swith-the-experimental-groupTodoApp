@@ -37,7 +37,7 @@ public function getAllTodos (int $userId) {
         $stmt->execute([
             ":user_id" => $userId
         ]);
-        return $stmt->fetchAll();
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
 
 }
 
