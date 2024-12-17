@@ -3,6 +3,7 @@
 namespace App;
 
 use App\DB;
+use PDO;
 
 class Todo
 {
@@ -39,7 +40,7 @@ public function getAllTodos (int $userId) {
         $stmt->execute([
             ":user_id" => $userId
         ]);
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 }
 
@@ -55,7 +56,7 @@ public function getTodo (int $id){
     $stmt->execute([
         ":id" => $id
     ]);
-    return $stmt->fetch();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
     public function DeleteUserId(int $userId)
