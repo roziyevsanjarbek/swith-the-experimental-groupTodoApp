@@ -37,28 +37,3 @@ $router->post('/todos',fn()=> require 'controllers/storeTodosController.php');
 $router->get('/todos/{id}/delete', fn($todoId)=>require 'controllers/deleteTodosController.php');
 
 $router->post('/todos/{id}/delete', fn($todoId)=>require 'controllers/deleteTodosController.php');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

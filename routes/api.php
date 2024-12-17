@@ -28,15 +28,12 @@ $router->put('/api/todos/{id}', function ($todoId) use ($todo){
     $todo->update($todoId, $_POST['title'],$_POST['status'], $_POST['dueDate'], 2);
     apiResponse([
         'ok'=>true,
-        'message'=>'update todos successful'
     ]);
-});
 
 
 $router->delete('/api/todos/{id}', function ($todoId) use ($todo){
     $todo->destory($todoId);
     apiResponse([
         'ok'=>true,
-        'message'=>'delete todos successful'
     ]);
 });

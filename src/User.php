@@ -68,7 +68,7 @@ class User
 
     public function DeleteAccount(int $userId): mixed
     {
-//        dd($userId);
+
         $query = "DELETE FROM users WHERE id = :id";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute([
